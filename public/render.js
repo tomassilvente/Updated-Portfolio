@@ -167,12 +167,13 @@
     $("ph-title").textContent = t.photography.title;
     $("ph-intro").textContent = t.photography.intro;
     const cells = ["tall wide", "", "", "wide"];
+    const positions = ["50% 35%", "65% 80%", "65% 45%", "50% 60%"];
     const dropTxt = lang === "es" ? "Arrastrá una foto" : "Drop a photo";
     const photos = t.photography.photos || [];
     $("ph-gallery").innerHTML = cells
       .map((cls, i) => {
         const media = photos[i]
-          ? `<img src="${photos[i]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">`
+          ? `<img src="${photos[i]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:${positions[i]};border-radius:16px;">`
           : `<image-slot id="ph-${i}" shape="rounded" radius="16" placeholder="${dropTxt}"></image-slot>`;
         return `<div class="cell ${cls}">${media}</div>`;
       })

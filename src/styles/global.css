@@ -281,7 +281,8 @@ h2.sectitle { font-family: var(--serif); font-weight: 400; font-size: clamp(30px
 .contact h2 em { font-style: italic; color: var(--accent); }
 .contact .intro { font-size: clamp(16px,1.9vw,19px); color: var(--muted); max-width: 46ch; margin: 0 auto 36px; line-height: 1.5; }
 .contact-actions { display: flex; flex-direction: column; align-items: center; gap: 26px; }
-.email-big { font-family: var(--serif); font-size: clamp(22px,3.4vw,40px); color: var(--ink); position: relative; display: inline-block; }
+.email-big { font-family: var(--serif); font-size: clamp(22px,3.4vw,40px); color: var(--ink); position: relative; display: inline-flex; align-items: center; gap: 14px; }
+.email-big svg { width: 0.8em; height: 0.8em; flex-shrink: 0; }
 .email-big::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
   background: var(--accent); transform: scaleX(0); transform-origin: center; transition: transform .4s ease; }
 .email-big:hover { color: var(--accent); }
