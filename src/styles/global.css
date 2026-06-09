@@ -205,6 +205,17 @@ h2.sectitle { font-family: var(--serif); font-weight: 400; font-size: clamp(30px
 .proj-link:hover { color: var(--accent); }
 .proj-link:hover::after { transform: scaleX(1); }
 
+/* ---------- project preview ---------- */
+.proj-preview { width: 100%; margin-bottom: 24px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.proj-preview-chrome { height: 28px; background: var(--bg-2); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 6px; padding: 0 12px; flex-shrink: 0; }
+.proj-preview-chrome span { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.proj-preview-chrome span:nth-child(1) { background: #ff5f57; }
+.proj-preview-chrome span:nth-child(2) { background: #ffbd2e; }
+.proj-preview-chrome span:nth-child(3) { background: #28ca40; }
+.proj-preview-screen { aspect-ratio: 16/9; overflow: hidden; background: var(--bg-2); }
+.proj-preview-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.proj-preview-screen image-slot { width: 100%; height: 100%; display: block; }
+
 /* ---------- skills ---------- */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1px;
   background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 12px; }

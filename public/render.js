@@ -87,9 +87,16 @@
         let links = "";
         if (p.live) links += `<a class="proj-link" href="${p.live}" target="_blank" rel="noopener">${ICONS.ext}${t.projects.viewLive}</a>`;
         if (p.github) links += `<a class="proj-link" href="${p.github}" target="_blank" rel="noopener">${ICONS.code}${t.projects.viewCode}</a>`;
+        const prevInner = p.preview
+          ? `<img src="${p.preview}" alt="${p.name}" loading="lazy">`
+          : `<image-slot id="prev-${i}" placeholder="Screenshot"></image-slot>`;
         return `<div class="proj rv">
           <div class="proj-idx">0${i + 1}</div>
           <div class="proj-body">
+            <div class="proj-preview">
+              <div class="proj-preview-chrome"><span></span><span></span><span></span></div>
+              <div class="proj-preview-screen">${prevInner}</div>
+            </div>
             <div class="proj-head">
               <h3>${p.name}</h3>
               <span class="proj-year">${p.year}</span>
@@ -163,13 +170,17 @@
     $("ph-intro").textContent = t.photography.intro;
     const cells = ["tall wide", "", "", "wide"];
     const dropTxt = lang === "es" ? "Arrastrá una foto" : "Drop a photo";
+    const photos = t.photography.photos || [];
     $("ph-gallery").innerHTML = cells
-      .map(
-        (cls, i) => `<div class="cell ${cls}">
-          <image-slot id="ph-${i}" shape="rounded" radius="16" placeholder="${dropTxt}"></image-slot>
+      .map((cls, i) => {
+        const media = photos[i]
+          ? `<img src="${photos[i]}" alt="${t.photography.captions[i] || ""}" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">`
+          : `<image-slot id="ph-${i}" shape="rounded" radius="16" placeholder="${dropTxt}"></image-slot>`;
+        return `<div class="cell ${cls}">
+          ${media}
           <span class="cap">${t.photography.captions[i] || ""}</span>
-        </div>`
-      )
+        </div>`;
+      })
       .join("");
     $("ph-ig").href = t.photography.igUrl;
     $("ph-ig").innerHTML = `
