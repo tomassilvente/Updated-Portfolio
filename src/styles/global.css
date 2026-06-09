@@ -100,7 +100,8 @@ h2.sectitle { font-family: var(--serif); font-weight: 400; font-size: clamp(30px
 
 /* ---------- hero ---------- */
 .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-start;
-  padding-top: clamp(96px, 12vh, 140px); padding-bottom: 60px; }
+  align-items: flex-start; padding-top: clamp(96px, 12vh, 140px); padding-bottom: 60px; }
+.hero .wrap { width: 100%; }
 .avail { display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 12.5px;
   letter-spacing: .03em; color: var(--ink-soft); border: 1px solid var(--line); background: var(--surface);
   padding: 7px 14px; border-radius: 100px; margin-bottom: 30px; box-shadow: var(--shadow); }
