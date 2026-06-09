@@ -46,8 +46,6 @@
     $("h-meta").innerHTML = `
       <span><b>${t.hero.based}</b></span>
       <span>${lang === "es" ? "Disponible" : "Status"}: <b>${lang === "es" ? "Remoto" : "Remote"}</b></span>`;
-    const heroPhoto = $("hero-photo");
-    if (heroPhoto) heroPhoto.setAttribute("placeholder", lang === "es" ? "Arrastrá tu foto" : "Drop your photo");
 
     // about
     $("a-label").textContent = t.about.label;
@@ -174,12 +172,9 @@
     $("ph-gallery").innerHTML = cells
       .map((cls, i) => {
         const media = photos[i]
-          ? `<img src="${photos[i]}" alt="${t.photography.captions[i] || ""}" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">`
+          ? `<img src="${photos[i]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">`
           : `<image-slot id="ph-${i}" shape="rounded" radius="16" placeholder="${dropTxt}"></image-slot>`;
-        return `<div class="cell ${cls}">
-          ${media}
-          <span class="cap">${t.photography.captions[i] || ""}</span>
-        </div>`;
+        return `<div class="cell ${cls}">${media}</div>`;
       })
       .join("");
     $("ph-ig").href = t.photography.igUrl;

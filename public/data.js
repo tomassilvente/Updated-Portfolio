@@ -70,7 +70,8 @@ window.PORTFOLIO = {
             "Fully responsive UI with dark mode support, built for everyday use",
           ],
           tech: ["TypeScript", "React", "TailwindCSS"], status: "live",
-          live: "https://liford.vercel.app", github: "https://github.com/tomassilvente/Liford" },
+          live: "https://liford.vercel.app", github: "https://github.com/tomassilvente/Liford",
+          preview: "/liford.webp" },
         { name: "Inmobiliaria Centro", year: "2022",
           description: "End-to-end property management platform built for a local real estate agency — handling listings, rentals, and sales with full client tracking. In active use for over 2 years.",
           highlights: [
@@ -79,7 +80,8 @@ window.PORTFOLIO = {
             "Admin dashboard powering the agency's daily operations and reporting",
           ],
           tech: ["Next.js", "TypeScript", "MySQL", "TailwindCSS"], status: "archived",
-          github: "https://github.com/tomassilvente/inmobiliariaCentro" },
+          github: "https://github.com/tomassilvente/inmobiliariaCentro",
+          preview: "/inmobiliaria.webp" },
         { name: "LigaCubb", year: "2024",
           description: "A web platform built to manage an amateur football league — fixtures, standings, player rosters, and match results all in one place.",
           highlights: [
@@ -87,7 +89,8 @@ window.PORTFOLIO = {
             "Standings table with automatic goal difference and points calculation",
             "Player roster management with individual stats and match history",
           ],
-          tech: ["HTML", "CSS", "JavaScript"], status: "archived" },
+          tech: ["HTML", "CSS", "JavaScript"], status: "archived",
+          preview: "/ligacubb.webp" },
       ],
     },
     skills: {
@@ -134,8 +137,7 @@ window.PORTFOLIO = {
       igUrl: "https://instagram.com/stomas.ph",
       igCta: "Follow on Instagram",
       igSub: "See the full feed and latest work",
-      photos: [],
-      captions: ["Selected work", "Light study", "On location", "Portrait", "Detail"],
+      photos: ["/aston.webp", "/yo-estrellas.webp", "/libre.webp", "/atardecer.webp"],
     },
     contact: {
       label: "Contact",
@@ -222,7 +224,8 @@ window.PORTFOLIO = {
             "UI responsiva con soporte de modo oscuro, diseñada para el uso cotidiano",
           ],
           tech: ["TypeScript", "React", "TailwindCSS"], status: "live",
-          live: "https://liford.vercel.app", github: "https://github.com/tomassilvente/Liford" },
+          live: "https://liford.vercel.app", github: "https://github.com/tomassilvente/Liford",
+          preview: "/liford.webp" },
         { name: "Inmobiliaria Centro", year: "2022",
           description: "Plataforma end-to-end de gestión inmobiliaria construida para una agencia local — listados, alquileres y ventas con seguimiento completo de clientes. En uso activo por más de 2 años.",
           highlights: [
@@ -231,7 +234,8 @@ window.PORTFOLIO = {
             "Panel de administración para las operaciones y reportes diarios de la agencia",
           ],
           tech: ["Next.js", "TypeScript", "MySQL", "TailwindCSS"], status: "archived",
-          github: "https://github.com/tomassilvente/inmobiliariaCentro" },
+          github: "https://github.com/tomassilvente/inmobiliariaCentro",
+          preview: "/inmobiliaria.webp" },
         { name: "LigaCubb", year: "2024",
           description: "Una plataforma web para gestionar una liga amateur de fútbol — fixtures, tablas de posiciones, planteles y resultados de partidos en un solo lugar.",
           highlights: [
@@ -239,7 +243,8 @@ window.PORTFOLIO = {
             "Tabla de posiciones con cálculo automático de diferencia de goles y puntos",
             "Gestión de planteles con estadísticas individuales e historial de partidos",
           ],
-          tech: ["HTML", "CSS", "JavaScript"], status: "archived" },
+          tech: ["HTML", "CSS", "JavaScript"], status: "archived",
+          preview: "/ligacubb.webp" },
       ],
     },
     skills: {
@@ -286,8 +291,7 @@ window.PORTFOLIO = {
       igUrl: "https://instagram.com/stomas.ph",
       igCta: "Seguir en Instagram",
       igSub: "Mirá el feed completo y mi trabajo más reciente",
-      photos: [],
-      captions: ["Trabajo seleccionado", "Estudio de luz", "En locación", "Retrato", "Detalle"],
+      photos: ["/aston.webp", "/yo-estrellas.webp", "/libre.webp", "/atardecer.webp"],
     },
     contact: {
       label: "Contacto",
