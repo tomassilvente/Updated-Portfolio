@@ -1,25 +1,112 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Experience from "../components/Experience.astro";
-import Projects from "../components/Projects.astro";
-import Skills from "../components/Skills.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
 
 <Layout>
-  <Header />
-  <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Projects />
-    <Skills />
-    <Contact />
+  <div class="cursor" id="cursor"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand"><span class="mark">TS</span><span>Tomás Silvente</span></a>
+      <nav class="nav-links" id="navlinks"></nav>
+      <div class="nav-tools">
+        <button class="toggle lang-toggle" id="langBtn" aria-label="Language">
+          <span data-l="en">EN</span><span data-l="es">ES</span>
+        </button>
+        <button class="toggle theme-toggle" id="themeBtn" aria-label="Theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero"><div class="wrap">
+      <div class="avail rv"><span class="dot"></span><span id="h-avail"></span></div>
+      <p class="greeting rv" id="h-greeting"></p>
+      <h1 class="rv" id="h-name"></h1>
+      <p class="role rv" id="h-role"></p>
+      <p class="tagline rv" id="h-tagline"></p>
+      <div class="hero-cta rv">
+        <a href="#projects" class="btn btn-primary" id="h-cta"></a>
+        <a href="#contact" class="btn btn-ghost" id="h-cta2"></a>
+      </div>
+      <div class="hero-meta rv" id="h-meta"></div>
+    </div>
+    <div class="scrollcue"><span class="ln"></span><span id="h-scroll">SCROLL</span></div>
+    </section>
+
+    <section id="about"><div class="wrap">
+      <div class="seclabel rv"><span class="num">01</span><span id="a-label"></span></div>
+      <div class="about-grid">
+        <div class="about-bio rv" id="a-bio"></div>
+        <div class="about-facts rv" id="a-facts"></div>
+      </div>
+    </div></section>
+
+    <section id="experience" class="bg-alt"><div class="wrap">
+      <div class="seclabel rv"><span class="num">02</span><span id="e-label"></span></div>
+      <h2 class="sectitle rv" id="e-title"></h2>
+      <div class="timeline" id="e-list"></div>
+    </div></section>
+
+    <section id="projects"><div class="wrap">
+      <div class="seclabel rv"><span class="num">03</span><span id="p-label"></span></div>
+      <h2 class="sectitle rv" id="p-title"></h2>
+      <div id="p-list" style="margin-top:18px;"></div>
+    </div></section>
+
+    <section id="skills" class="bg-alt"><div class="wrap">
+      <div class="seclabel rv"><span class="num">04</span><span id="s-label"></span></div>
+      <h2 class="sectitle rv" id="s-title"></h2>
+      <div class="skills-grid rv" id="s-list"></div>
+    </div></section>
+
+    <section id="education"><div class="wrap">
+      <div class="seclabel rv"><span class="num">05</span><span id="ed-label"></span></div>
+      <h2 class="sectitle rv" id="ed-title"></h2>
+      <div class="edu-grid">
+        <div class="rv">
+          <div class="edu-sub" id="ed-studies-label"></div>
+          <div id="ed-studies"></div>
+          <div style="margin-top:36px;">
+            <div class="edu-sub" id="lg-label"></div>
+            <div class="langs" id="lg-list" style="margin-top:0;"></div>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="edu-sub" id="ed-courses-label"></div>
+          <div id="ed-courses"></div>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="photography"><div class="wrap">
+      <div class="seclabel rv"><span class="num">06</span><span id="ph-label"></span></div>
+      <h2 class="sectitle rv" id="ph-title"></h2>
+      <p class="photo-intro rv" id="ph-intro"></p>
+      <div class="gallery rv" id="ph-gallery"></div>
+      <a class="ig-band rv" id="ph-ig" target="_blank" rel="noopener"></a>
+    </div></section>
+
+    <section id="contact" class="bg-alt contact"><div class="wrap">
+      <div class="seclabel rv" style="justify-content:center;"><span class="num">07</span><span id="c-label"></span></div>
+      <h2 class="rv" id="c-title"></h2>
+      <p class="intro rv" id="c-intro"></p>
+      <div class="contact-actions rv">
+        <a class="email-big" id="c-email"></a>
+        <div class="socials" id="c-socials"></div>
+      </div>
+      <div class="contact-loc rv" id="c-loc"></div>
+    </div></section>
   </main>
-  <Footer />
+
+  <footer><div class="wrap"><div class="foot-inner">
+    <span id="f-built"></span>
+    <span id="f-year"></span>
+    <span class="foot-top" id="f-top">↑ <span id="f-toptext">Back to top</span></span>
+  </div></div></footer>
+
+  <script is:inline src="/data.js"></script>
+  <script is:inline src="/image-slot.js"></script>
+  <script is:inline src="/render.js"></script>
 </Layout>
