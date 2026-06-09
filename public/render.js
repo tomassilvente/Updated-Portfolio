@@ -289,16 +289,11 @@
     }
     cursor.innerHTML = px;
 
-    let cx = 0, cy = 0, tx = 0, ty = 0, shown = false, hot = false;
+    let shown = false, hot = false;
     window.addEventListener("mousemove", (e) => {
-      tx = e.clientX; ty = e.clientY;
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%) scale(${hot ? 1.55 : 1})`;
       if (!shown) { cursor.style.opacity = 1; shown = true; }
     });
-    (function loop() {
-      cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
-      cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%) scale(${hot ? 1.55 : 1})`;
-      requestAnimationFrame(loop);
-    })();
     document.addEventListener("mouseover", (e) => {
       if (e.target.closest("a, button, .chip, .skill-items span")) { hot = true; cursor.classList.add("hot"); }
     });
