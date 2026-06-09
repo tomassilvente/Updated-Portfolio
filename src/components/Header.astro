@@ -1,0 +1,182 @@
+---
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div
+    class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+  >
+    <!-- Name / Logo -->
+    <a
+      href="#"
+      class="font-mono text-sm font-medium tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+    >
+      ts<span class="text-indigo-600 dark:text-indigo-400">.</span>
+    </a>
+
+    <!-- Right side: nav + controls -->
+    <div class="flex items-center gap-6">
+      <!-- Nav links (hidden on small screens) -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="nav-link">
+          <span class="lang-en">About</span>
+          <span class="lang-es">Sobre mí</span>
+        </a>
+        <a href="#experience" class="nav-link">
+          <span class="lang-en">Experience</span>
+          <span class="lang-es">Experiencia</span>
+        </a>
+        <a href="#projects" class="nav-link">
+          <span class="lang-en">Projects</span>
+          <span class="lang-es">Proyectos</span>
+        </a>
+        <a href="#skills" class="nav-link">
+          <span class="lang-en">Skills</span>
+          <span class="lang-es">Habilidades</span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <span class="lang-en">Contact</span>
+          <span class="lang-es">Contacto</span>
+        </a>
+      </nav>
+
+      <!-- Divider -->
+      <div class="hidden md:block w-px h-4 bg-zinc-300 dark:bg-zinc-700"></div>
+
+      <!-- Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Lang toggle -->
+        <button
+          id="lang-toggle"
+          class="font-mono text-xs font-medium px-2 py-1 rounded border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-900 dark:hover:border-zinc-100 transition-all"
+          aria-label="Toggle language"
+        >
+          ES
+        </button>
+
+        <!-- Theme toggle -->
+        <button
+          id="theme-toggle"
+          class="w-8 h-8 flex items-center justify-center rounded text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all"
+          aria-label="Toggle theme"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg
+            id="icon-sun"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            ></path>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg
+            id="icon-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hidden"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    @apply text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors;
+  }
+
+  #header.scrolled {
+    @apply bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800;
+  }
+</style>
+
+<script is:inline>
+  // Theme toggle
+  const themeBtn = document.getElementById("theme-toggle");
+  const iconSun = document.getElementById("icon-sun");
+  const iconMoon = document.getElementById("icon-moon");
+
+  function applyTheme(theme) {
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+      iconSun.classList.add("hidden");
+      iconMoon.classList.remove("hidden");
+    } else {
+      document.documentElement.classList.add("dark");
+      iconSun.classList.remove("hidden");
+      iconMoon.classList.add("hidden");
+    }
+  }
+
+  applyTheme(localStorage.getItem("theme") || "dark");
+
+  themeBtn.addEventListener("click", () => {
+    const current = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  });
+
+  // Lang toggle
+  const langBtn = document.getElementById("lang-toggle");
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem("lang", lang);
+    langBtn.textContent = lang === "en" ? "ES" : "EN";
+  }
+
+  applyLang(localStorage.getItem("lang") || "en");
+
+  langBtn.addEventListener("click", () => {
+    const current = document.documentElement.lang;
+    applyLang(current === "en" ? "es" : "en");
+  });
+
+  // Scroll: add .scrolled class to header
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  });
+
+  // Scroll reveal — must wait for full DOM before querying .reveal elements
+  document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    reveals.forEach((el) => observer.observe(el));
+  });
+</script>

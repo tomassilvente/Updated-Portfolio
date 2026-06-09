@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html[lang="en"] .lang-es { display: none !important; }
+  html[lang="es"] .lang-en { display: none !important; }
+
+  ::selection {
+    background: rgb(99 102 241 / 0.15);
+  }
+
+  * {
+    border-color: rgb(228 228 231);
+  }
+
+  .dark * {
+    border-color: rgb(39 39 42);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim-1 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.anim-2 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+.anim-3 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+.anim-4 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
+.anim-5 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
+.anim-6 { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

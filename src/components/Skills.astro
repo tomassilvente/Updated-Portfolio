@@ -1,0 +1,60 @@
+---
+import { content } from "../i18n/content";
+const en = content.en.skills;
+const es = content.es.skills;
+---
+
+<section id="skills" class="py-24 border-t border-zinc-200 dark:border-zinc-800">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="font-mono text-xs text-indigo-600 dark:text-indigo-400 mb-3 tracking-wider uppercase">
+        04 —
+      </p>
+      <h2 class="text-3xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <span class="lang-en">{en.title}</span>
+        <span class="lang-es">{es.title}</span>
+      </h2>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        en.categories.map((cat, i) => (
+          <div class="space-y-3">
+            <p class="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
+              <span class="lang-en">{cat.label}</span>
+              <span class="lang-es">{es.categories[i].label}</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {cat.items.map((item, j) => (
+                <span class="font-mono text-xs px-2.5 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-700 dark:hover:text-indigo-300 transition-all cursor-default">
+                  <span class="lang-en">{item}</span>
+                  <span class="lang-es">{es.categories[i].items[j]}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Languages note -->
+    <div class="reveal mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
+          <span class="lang-en">Languages</span>
+          <span class="lang-es">Idiomas</span>
+        </span>
+        <div class="flex gap-2">
+          <span class="font-mono text-xs px-2.5 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300">
+            <span class="lang-en">Spanish (Native)</span>
+            <span class="lang-es">Español (Nativo)</span>
+          </span>
+          <span class="font-mono text-xs px-2.5 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300">
+            <span class="lang-en">English (C1)</span>
+            <span class="lang-es">Inglés (C1)</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
