@@ -21,16 +21,23 @@ import "../styles/global.css";
 
   <main id="top">
     <section class="hero" id="hero"><div class="wrap">
-      <div class="avail rv"><span class="dot"></span><span id="h-avail"></span></div>
-      <p class="greeting rv" id="h-greeting"></p>
-      <h1 class="rv" id="h-name"></h1>
-      <p class="role rv" id="h-role"></p>
-      <p class="tagline rv" id="h-tagline"></p>
-      <div class="hero-cta rv">
-        <a href="#projects" class="btn btn-primary" id="h-cta"></a>
-        <a href="#contact" class="btn btn-ghost" id="h-cta2"></a>
+      <div class="hero-cols">
+        <div class="hero-left">
+          <div class="avail rv"><span class="dot"></span><span id="h-avail"></span></div>
+          <p class="greeting rv" id="h-greeting"></p>
+          <h1 class="rv" id="h-name"></h1>
+          <p class="role rv" id="h-role"></p>
+          <p class="tagline rv" id="h-tagline"></p>
+          <div class="hero-cta rv">
+            <a href="#projects" class="btn btn-primary" id="h-cta"></a>
+            <a href="#contact" class="btn btn-ghost" id="h-cta2"></a>
+          </div>
+          <div class="hero-meta rv" id="h-meta"></div>
+        </div>
+        <div class="hero-right rv">
+          <image-slot id="hero-photo" shape="rounded" radius="24" placeholder="Drop a photo"></image-slot>
+        </div>
       </div>
-      <div class="hero-meta rv" id="h-meta"></div>
     </div>
     <div class="scrollcue"><span class="ln"></span><span id="h-scroll">SCROLL</span></div>
     </section>

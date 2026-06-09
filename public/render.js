@@ -46,6 +46,8 @@
     $("h-meta").innerHTML = `
       <span><b>${t.hero.based}</b></span>
       <span>${lang === "es" ? "Disponible" : "Status"}: <b>${lang === "es" ? "Remoto" : "Remote"}</b></span>`;
+    const heroPhoto = $("hero-photo");
+    if (heroPhoto) heroPhoto.setAttribute("placeholder", lang === "es" ? "Arrastrá tu foto" : "Drop your photo");
 
     // about
     $("a-label").textContent = t.about.label;
