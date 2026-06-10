@@ -4,8 +4,8 @@
   const $ = (id) => document.getElementById(id);
 
   // ----- persisted state -----
-  let lang = localStorage.getItem("ts_lang") || "es";
-  let theme = localStorage.getItem("ts_theme") || "light";
+  let lang = localStorage.getItem("ts_lang") || "en";
+  let theme = localStorage.getItem("ts_theme") || "dark";
 
   const ICONS = {
     sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
@@ -45,7 +45,7 @@
     $("h-cta2").textContent = t.hero.cta2;
     $("h-meta").innerHTML = `
       <span><b>${t.hero.based}</b></span>
-      <span>${lang === "es" ? "Disponible" : "Status"}: <b>${lang === "es" ? "Remoto" : "Remote"}</b></span>`;
+      <span>${lang === "es" ? "Disponible" : "Status"}: <b>${lang === "es" ? "Remoto, presencial o híbrido" : "Remote, on-site, or hybrid"}</b></span>`;
 
     // about
     $("a-label").textContent = t.about.label;
@@ -204,6 +204,11 @@
     // footer
     $("f-built").innerHTML = "<b>Tomás Silvente</b> · " + (lang === "es" ? "Diseñado y desarrollado" : "Designed & built");
     $("f-year").textContent = t.footer.year;
+    $("f-socials").innerHTML =
+      `<a href="mailto:${t.contact.email}" aria-label="Email">${ICONS.mail}</a>` +
+      t.contact.socials
+        .map((s) => `<a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${s.label === "GitHub" ? ICONS.gh : ICONS.li}</a>`)
+        .join("");
     $("f-toptext").textContent = lang === "es" ? "Volver arriba" : "Back to top";
     $("h-scroll").textContent = lang === "es" ? "DESLIZÁ" : "SCROLL";
 

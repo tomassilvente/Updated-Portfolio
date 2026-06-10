@@ -300,6 +300,10 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
 .foot-inner b { color: var(--ink); font-weight: 500; }
 .foot-top { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: color .25s; }
 .foot-top:hover { color: var(--accent); }
+.foot-socials { display: flex; align-items: center; gap: 14px; }
+.foot-socials a { display: inline-flex; color: var(--muted); transition: color .25s; }
+.foot-socials a:hover { color: var(--accent); }
+.foot-socials svg { width: 18px; height: 18px; }
 
 /* ---------- reveal ---------- */
 .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }

@@ -10,7 +10,7 @@ window.PORTFOLIO = {
       greeting: "Hi, I'm",
       name: "Tomás Silvente",
       role: "Full Stack Developer & Systems Analyst",
-      tagline: "I build fast, accessible web applications, with an eye for design.",
+      tagline: "I build fast, accessible web applications end-to-end, from the database to the interface.",
       cta: "View my work",
       cta2: "Get in touch",
       available: "Open to job opportunities",
@@ -21,6 +21,7 @@ window.PORTFOLIO = {
       title: "Technical precision, paired with a visual eye.",
       bio: [
         "I'm a Systems Analyst and Full Stack Developer based in Punta Alta, Argentina, currently working remotely for Alpha Efficiency in Chicago. I specialize in high-performance web development with Next.js, React, and TailwindCSS, with a strong focus on technical SEO and API integrations.",
+        "On the backend, I design and build my own APIs and database schemas with PostgreSQL, MySQL, and Prisma, and deploy and maintain full applications on Vercel and Netlify, from environment configuration to production monitoring.",
         "Beyond code, I'm a photographer. That dual perspective, technical precision paired with a visual eye, shapes how I approach every project I build.",
       ],
       facts: [
@@ -40,6 +41,8 @@ window.PORTFOLIO = {
             "Technical SEO implementation and custom API integrations to improve search rankings and connect third-party services.",
             "Large-scale prospect database building (tens of thousands of records) with Clay & Snov.io for outbound campaigns.",
             "Google Ads campaigns and landing page development in Sage and HubSpot to drive company growth.",
+            "Automated outbound workflows by integrating Clay, Snov.io, and HubSpot CRM, syncing enriched lead data and triggering email sequences without manual handoffs.",
+            "Built and maintained internal tooling and dashboards to track campaign performance and CRM data quality across the marketing team.",
           ] },
         { role: "Frontend Developer", company: "Immer", period: "Jul 2023 – Mar 2024", location: "New York, USA · Remote",
           bullets: [
@@ -100,6 +103,7 @@ window.PORTFOLIO = {
             "Custom API layer connecting the frontend to MySQL for managing teams, fixtures, and results",
           ],
           tech: ["Next.js", "React", "MySQL", "TailwindCSS"], status: "archived",
+          github: "https://github.com/tomassilvente/LigaCubb",
           preview: "/ligacubb.webp" },
       ],
     },
@@ -175,7 +179,7 @@ window.PORTFOLIO = {
       greeting: "Hola, soy",
       name: "Tomás Silvente",
       role: "Desarrollador Full Stack y Analista de Sistemas",
-      tagline: "Construyo aplicaciones web rápidas y accesibles, con ojo para el diseño.",
+      tagline: "Construyo aplicaciones web rápidas y accesibles de punta a punta, desde la base de datos hasta la interfaz.",
       cta: "Ver mi trabajo",
       cta2: "Hablemos",
       available: "Abierto a propuestas laborales",
@@ -186,6 +190,7 @@ window.PORTFOLIO = {
       title: "Precisión técnica, combinada con ojo visual.",
       bio: [
         "Soy Analista de Sistemas y Desarrollador Full Stack radicado en Punta Alta, Argentina, trabajando de forma remota para Alpha Efficiency en Chicago. Me especializo en desarrollo web de alto rendimiento con Next.js, React y TailwindCSS, con fuerte foco en SEO técnico e integración de APIs.",
+        "Del lado del backend, diseño y construyo mis propias APIs y esquemas de base de datos con PostgreSQL, MySQL y Prisma, y despliego y mantengo aplicaciones completas en Vercel y Netlify, desde la configuración del entorno hasta el monitoreo en producción.",
         "Más allá del código, soy fotógrafo. Esa doble perspectiva, precisión técnica combinada con ojo visual, define cómo me acerco a cada proyecto.",
       ],
       facts: [
@@ -205,6 +210,8 @@ window.PORTFOLIO = {
             "Implementación de SEO técnico e integraciones de APIs personalizadas para mejorar el posicionamiento en buscadores.",
             "Construcción de bases de datos de prospectos a gran escala (decenas de miles de registros) con Clay y Snov.io para campañas de outbound.",
             "Campañas de Google Ads y desarrollo de landing pages en Sage y HubSpot para impulsar el crecimiento de la empresa.",
+            "Automatización de flujos de outbound integrando Clay, Snov.io y HubSpot CRM, sincronizando datos enriquecidos de leads y disparando secuencias de email sin intervención manual.",
+            "Desarrollo y mantenimiento de herramientas internas y dashboards para monitorear el rendimiento de campañas y la calidad de los datos del CRM del equipo de marketing.",
           ] },
         { role: "Desarrollador Frontend", company: "Immer", period: "Jul 2023 – Mar 2024", location: "Nueva York, EE.UU. · Remoto",
           bullets: [
@@ -265,6 +272,7 @@ window.PORTFOLIO = {
             "Capa de API personalizada que conecta el frontend con MySQL para gestionar equipos, fixtures y resultados",
           ],
           tech: ["Next.js", "React", "MySQL", "TailwindCSS"], status: "archived",
+          github: "https://github.com/tomassilvente/LigaCubb",
           preview: "/ligacubb.webp" },
       ],
     },
