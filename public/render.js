@@ -85,9 +85,7 @@
         let links = "";
         if (p.live) links += `<a class="proj-link" href="${p.live}" target="_blank" rel="noopener">${ICONS.ext}${t.projects.viewLive}</a>`;
         if (p.github) links += `<a class="proj-link" href="${p.github}" target="_blank" rel="noopener">${ICONS.code}${t.projects.viewCode}</a>`;
-        const prevInner = p.preview
-          ? `<img src="${p.preview}" alt="${p.name}" loading="lazy">`
-          : `<image-slot id="prev-${i}" placeholder="Screenshot"></image-slot>`;
+        const prevInner = `<img src="${p.preview}" alt="${p.name}" loading="lazy">`;
         return `<div class="proj rv">
           <div class="proj-idx">0${i + 1}</div>
           <div class="proj-body">
@@ -168,13 +166,10 @@
     $("ph-intro").textContent = t.photography.intro;
     const cells = ["tall wide", "", "", "wide"];
     const positions = ["50% 35%", "65% 80%", "65% 45%", "50% 60%"];
-    const dropTxt = lang === "es" ? "Arrastrá una foto" : "Drop a photo";
-    const photos = t.photography.photos || [];
+    const photos = t.photography.photos;
     $("ph-gallery").innerHTML = cells
       .map((cls, i) => {
-        const media = photos[i]
-          ? `<img src="${photos[i]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:${positions[i]};border-radius:16px;">`
-          : `<image-slot id="ph-${i}" shape="rounded" radius="16" placeholder="${dropTxt}"></image-slot>`;
+        const media = `<img src="${photos[i]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:${positions[i]};border-radius:16px;">`;
         return `<div class="cell ${cls}">${media}</div>`;
       })
       .join("");

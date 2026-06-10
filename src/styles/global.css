@@ -46,8 +46,8 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 6px var(--accent); animation-name: pxblink; animation-timing-function: steps(1, end);
   animation-iteration-count: infinite; }
 @keyframes pxblink { 0%, 42% { opacity: 0; } 50%, 66% { opacity: .95; } 74%, 100% { opacity: 0; } }
-.cursor.hot .px { animation-duration: .26s !important; }
-@media (hover: none), (max-width: 760px) { .cursor { display: none; } }
+.cursor.hot .px { animation-duration: .26s !important; background: var(--ink); box-shadow: 0 0 6px var(--ink); }
+@media (hover: none) { .cursor { display: none; } }
 
 /* ---------- nav ---------- */
 header.nav {
@@ -214,7 +214,6 @@ h2.sectitle { font-family: var(--serif); font-weight: 400; font-size: clamp(30px
 .proj-preview-chrome span:nth-child(3) { background: #28ca40; }
 .proj-preview-screen { aspect-ratio: 16/9; overflow: hidden; background: var(--bg-2); }
 .proj-preview-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-.proj-preview-screen image-slot { width: 100%; height: 100%; display: block; }
 
 /* ---------- skills ---------- */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1px;
@@ -263,7 +262,6 @@ h2.sectitle { font-family: var(--serif); font-weight: 400; font-size: clamp(30px
 .gallery .cell { position: relative; overflow: hidden; border-radius: 16px; }
 .gallery .cell.tall { grid-row: span 2; }
 .gallery .cell.wide { grid-column: span 2; }
-.gallery image-slot { width: 100%; height: 100%; display: block; }
 .ig-band { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
   flex-wrap: wrap; padding: 26px 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
   box-shadow: var(--shadow); }
@@ -312,7 +310,7 @@ footer { border-top: 1px solid var(--line); padding: 36px 0; }
 
 /* ---------- responsive ---------- */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button, .chip, .skill-items span, .email-big, .foot-top { cursor: none; }
+  * { cursor: none !important; }
 }
 @media (max-width: 1180px) {
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
