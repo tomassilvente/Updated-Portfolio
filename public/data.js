@@ -126,8 +126,8 @@ window.PORTFOLIO = {
       studiesLabel: "Formal studies",
       coursesLabel: "Courses & certifications",
       studies: [
-        { degree: "Systems Analyst (Technician)", school: "Instituto Superior de Formación Técnica N°190 · Punta Alta, Argentina", period: "2020 – 2025", note: "Software analysis, databases, and full-stack development." },
-        { degree: "Network Technician", school: "Instituto Superior TECLAB", period: "2020 – 2021", note: "Network infrastructure, protocols, and systems administration." },
+        { degree: "Systems Analyst", school: "Instituto Superior de Formación Técnica N°190 · Punta Alta, Argentina", period: "2020 – 2025", note: "Three-year program covering algorithms and data structures, software engineering, databases, operating systems, computer architecture, networks and communications, statistics, and applied mathematics, with professional internships throughout." },
+        { degree: "Network Technician", school: "Instituto Superior TECLAB", period: "2020 – 2021", note: "Two-year program focused on network infrastructure, LAN/WAN administration, switching and routing, server virtualization, cloud computing, and network security, with hands-on practice using industry tools." },
       ],
       courses: [
         { name: "React Completo & MERN", issuer: "Udemy", date: "Jul 2023", skills: ["React.js", "Redux", "+5"] },
@@ -295,8 +295,8 @@ window.PORTFOLIO = {
       studiesLabel: "Estudios formales",
       coursesLabel: "Cursos y certificaciones",
       studies: [
-        { degree: "Analista de Sistemas (Técnico)", school: "Instituto Superior de Formación Técnica N°190 · Punta Alta, Argentina", period: "2020 – 2025", note: "Análisis de software, bases de datos y desarrollo full-stack." },
-        { degree: "Técnico en Redes Informáticas", school: "Instituto Superior TECLAB", period: "2020 – 2021", note: "Infraestructura de redes, protocolos y administración de sistemas." },
+        { degree: "Analista de Sistemas", school: "Instituto Superior de Formación Técnica N°190 · Punta Alta, Argentina", period: "2020 – 2025", note: "Carrera de tres años que abarca algoritmos y estructuras de datos, ingeniería de software, bases de datos, sistemas operativos, arquitectura de computadoras, redes y comunicaciones, estadística y matemática aplicada, con prácticas profesionalizantes a lo largo de toda la carrera." },
+        { degree: "Técnico en Redes Informáticas", school: "Instituto Superior TECLAB", period: "2020 – 2021", note: "Carrera de dos años enfocada en infraestructura de redes, administración de LAN/WAN, switching y routing, virtualización de servidores, computación en la nube y seguridad de redes, con práctica intensiva en herramientas de la industria." },
       ],
       courses: [
         { name: "React Completo & MERN", issuer: "Udemy", date: "Jul 2023", skills: ["React.js", "Redux", "+5"] },

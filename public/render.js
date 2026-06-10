@@ -3,9 +3,9 @@
   const D = window.PORTFOLIO;
   const $ = (id) => document.getElementById(id);
 
-  // ----- persisted state -----
-  let lang = localStorage.getItem("ts_lang") || "en";
-  let theme = localStorage.getItem("ts_theme") || "dark";
+  // ----- state (always starts EN + dark; toggles only affect the current visit) -----
+  let lang = "en";
+  let theme = "dark";
 
   const ICONS = {
     sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
@@ -278,13 +278,11 @@
   // ----- toggles -----
   $("langBtn").addEventListener("click", () => {
     lang = lang === "es" ? "en" : "es";
-    localStorage.setItem("ts_lang", lang);
     render();
     onScroll();
   });
   $("themeBtn").addEventListener("click", () => {
     theme = theme === "light" ? "dark" : "light";
-    localStorage.setItem("ts_theme", theme);
     applyTheme();
   });
   $("f-top").addEventListener("click", () =>
@@ -317,6 +315,13 @@
   }
 
   applyTheme();
-  render();
+  // The markup is already written in English, so a full render() on load
+  // would just redo it; only re-render if the user toggles to Spanish.
+  if (lang === "en") {
+    bindReveals();
+    setTimeout(animateLangBars, 50);
+  } else {
+    render();
+  }
   onScroll();
 })();
